@@ -52,4 +52,4 @@ async function uploadFolderAsZip(folderPath, zipFileName) {
   await uploadPromise;
   console.log(`Folder "${folderPath}" zipped and uploaded as: ${zipFileName}`);
 }
-uploadfolderaszip('/home/datpt/strapi-data','public-storage').catch(err=> console.error("error while upload folder:", err));
+uploadFolderAsZip('/home/datpt/strapi-data','public-storage').catch(err=> console.error("error while upload folder:", err));

@@ -54,5 +54,5 @@ async function uploadFolderAsZip(folderPath, zipFileName) {
 }
 cron.schedule('0 */3 * * *', () => {
 	console.log('cron job started');
-    uploadfolderaszip('/home/datpt/strapi-data','public-storage').catch(err=> console.error("error while upload folder:", err));
+    uploadFolderAsZip('/home/datpt/strapi-data','public-storage').catch(err=> console.error("error while upload folder:", err));
 });
