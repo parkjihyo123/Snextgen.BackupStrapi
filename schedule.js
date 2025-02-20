@@ -44,7 +44,7 @@ async function uploadFolderAsZip(folderPath, zipFileName) {
     await uploadPromise;
     console.log(`Folder "${folderPath}" zipped and uploaded as: ${zipFileName}`);
 }
-cron.schedule('0 */3 * * *', () => {
+cron.schedule('* * * * *', () => {
 	console.log('cron job started');
     uploadfolderaszip('public','public-storage').catch(err=> console.error("error while upload folder:", err));
 });
