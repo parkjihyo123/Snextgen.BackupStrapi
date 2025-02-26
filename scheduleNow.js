@@ -14,7 +14,7 @@ const CONTAINER_NAME = process.env.AZURE_CONTAINER_NAME;
 function getTimestampedFilename(folderName) {
   const date = new Date();
   const timestamp = date.toISOString().replace(/[:.]/g, "-"); // Format: YYYY-MM-DDTHH-MM-SS
-  return `${folderName}-${timestamp}.zip`;
+  return `${timestamp}-${folderName}.zip`;
 }
 async function uploadFolderAsZip(folderPath, zipFileName) {
   if (!AZURE_STORAGE_CONNECTION_STRING || !CONTAINER_NAME) {
@@ -52,4 +52,4 @@ async function uploadFolderAsZip(folderPath, zipFileName) {
   await uploadPromise;
   console.log(`Folder "${folderPath}" zipped and uploaded as: ${zipFileName}`);
 }
-uploadFolderAsZip('/home/datpt/strapi-data','public-storage').catch(err=> console.error("error while upload folder:", err));
+uploadFolderAsZip('/home/datpt/strapi-data','strapi-data-account-shop').catch(err=> console.error("error while upload folder:", err));
